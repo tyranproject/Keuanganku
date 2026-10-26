@@ -2,44 +2,17 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <!-- Sengaja TANPA maximum-scale / user-scalable=no, supaya pinch-zoom tetap bisa -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>KEUANGANKU - Pencatatan Keuangan & Multi-Dompet</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2845/2845724.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; overflow: hidden; background-color: #030712; }
-    iframe { width: 100%; height: 100%; border: none; display: block; background-color: #030712; }
-    /* Tombol darurat: kalau iframe diblokir browser, pengguna tetap bisa buka langsung */
-    .open-direct {
-      position: fixed; right: 16px; bottom: 16px; z-index: 10;
-      padding: 10px 14px; border-radius: 999px;
-      background: #10b981; color: #fff; font: 600 14px/1.2 system-ui, sans-serif;
-      text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,.4); opacity: .9;
-    }
-    .open-direct:hover { opacity: 1; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background-color: #0f172a; }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
   </style>
 </head>
 <body>
-  <!--
-    PENTING: file ini saja TIDAK cukup.
-    Web app Apps Script secara default menolak di-frame (X-Frame-Options).
-    Di Code.gs, doGet() HARUS ditambah:
-      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
-    lalu Deploy > New deployment (Execute as: Me), dan URL /exec yang baru
-    ditempel ke src di bawah ini. Tanpa itu, halaman ini akan tetap putih.
-    Catatan keamanan: ALLOWALL berarti situs web mana pun bisa me-frame
-    aplikasi ini (risiko clickjacking). Alternatif yang lebih aman: jangan
-    pakai iframe, cukup arahkan GitHub Pages ke URL /exec, atau bagikan
-    langsung URL /exec-nya.
-  -->
-  <iframe
-    id="app"
-    src="https://script.google.com/macros/s/AKfycbzRUHDokW_hqvzMSxp7RGkDRvXlJIlAil2q1UB6AxxUXoxAYRTgg0D5FC5MKWOgnvRM-w/exec"
-    allow="geolocation; microphone; camera"
-    title="KEUANGANKU"
-  ></iframe>
-  <a class="open-direct" href="https://script.google.com/macros/s/AKfycbzRUHDokW_hqvzMSxp7RGkDRvXlJIlAil2q1UB6AxxUXoxAYRTgg0D5FC5MKWOgnvRM-w/exec" target="_blank" rel="noopener">Buka langsung di Google ↗</a>
-  <noscript><p style="color:#fff; padding:16px; font-family:system-ui, sans-serif;">Aktifkan JavaScript, atau buka langsung URL web app Google Apps Script Anda.</p></noscript>
+  <!-- GANTI SRC DENGAN URL WEB APP GOOGLE APPS SCRIPT ANDA -->
+  <iframe src="https://script.google.com/macros/s/AKfycbzRUHDokW_hqvzMSxp7RGkDRvXlJIlAil2q1UB6AxxUXoxAYRTgg0D5FC5MKWOgnvRM-w/exec" allow="geolocation; microphone; camera"></iframe>
 </body>
 </html>
