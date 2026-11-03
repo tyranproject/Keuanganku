@@ -1,0 +1,10 @@
+# KEUANGANKU — Perlindungan folder uploads/
+# Struk yang diunggah pengguna hanya boleh DIUNDUH, tidak boleh DIEKSEKUSI
+# sebagai kode. Aturan ini mematikan eksekusi PHP di folder ini.
+
+php_flag engine off
+Options -ExecCGI
+
+<FilesMatch "\.(php|phtml|phar|cgi|pl)$">
+    Require all denied
+</FilesMatch>
