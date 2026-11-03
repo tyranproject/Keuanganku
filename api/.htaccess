@@ -1,0 +1,7 @@
+# KEUANGANKU — Perlindungan folder api/
+# Blokir akses langsung lewat browser ke berkas konfigurasi.
+# (Berkas PHP lain juga dilindungi guard KEUANGANKU_APP di dalam kodenya.)
+
+<Files "config.php">
+    Require all denied
+</Files>
